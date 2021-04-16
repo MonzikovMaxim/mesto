@@ -15,4 +15,4 @@
 * Адаптивная вёрстка
 
 ## Сайт 
-* https://monzikovmaxim.github.io/mesto/
+* https://monzikovmaxim.github.io/mesto/index.html
