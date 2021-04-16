@@ -1,12 +1,12 @@
 let profile = document.querySelector('.profile__box');
 let profileName = profile.querySelector('.profile__name');
 let profileJob = profile.querySelector('.profile__job');
-let openPopupButton = profile.querySelector('.button__edit');
+let openPopupButton = profile.querySelector('.profile__edit-button');
 let popup = document.querySelector('.popup');
 let nameInput = popup.querySelector('.popup__name');
 let jobInput = popup.querySelector('.popup__job');
-let closePopupButton = popup.querySelector('.button__close');
-let savePopupButton = popup.querySelector('.button__save');
+let closePopupButton = popup.querySelector('.popup__close-button');
+let savePopupButton = popup.querySelector('.popup__save-button');
 
 openPopupButton.addEventListener('click', function openPopup() {
   popup.classList.add('popup_open');
