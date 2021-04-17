@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="pages/index.css" />
     <title>Mesto</title>
   </head>
-  <body>
+  <body class="body">
     <div class="page">
       <header class="header container">
         <img class="header__logo" src="images/logo.svg" alt="логотип-место" />
@@ -30,43 +30,43 @@
           <div class="card">
             <img class="card__image" src="images/Karachaevsk.jpg" alt="Карачаевск" />
             <div class="card__block">
-              <p class="card__title">Карачаевск</p>
-              <button type="button" class="card__like-button card__like-button_active"></button>
+              <h2 class="card__title">Карачаевск</h2>
+              <button type="button" class="card__like-button"></button>
             </div>
           </div>
           <div class="card">
             <img class="card__image" src="images/Elbrus.jpg" alt="Эльбрус" />
             <div class="card__block">
-              <p class="card__title">Гора Эльбрус</p>
-              <button type="button" class="card__like-button card__like-button_active"></button>
+              <h2 class="card__title">Гора Эльбрус</h2>
+              <button type="button" class="card__like-button"></button>
             </div>
           </div>
           <div class="card">
             <img class="card__image" src="images/Dombay.jpg" alt="Домбай" />
             <div class="card__block">
-              <p class="card__title">Домбай</p>
-              <button type="button" class="card__like-button card__like-button_active"></button>
+              <h2 class="card__title">Домбай</h2>
+              <button type="button" class="card__like-button"></button>
             </div>
           </div>
           <div class="card">
             <img class="card__image" src="images/kurshskya-kosa.jpg" alt="Куршская коса" />
             <div class="card__block">
-              <p class="card__title">Куршская коса</p>
-              <button type="button" class="card__like-button card__like-button_active"></button>
+              <h2 class="card__title">Куршская коса</h2>
+              <button type="button" class="card__like-button"></button>
             </div>
           </div>
           <div class="card">
             <img class="card__image" src="images/Baikal.jpg" alt="Байкал" />
             <div class="card__block">
-              <p class="card__title">Байкал</p>
-              <button type="button" class="card__like-button card__like-button_active"></button>
+              <h2 class="card__title">Байкал</h2>
+              <button type="button" class="card__like-button"></button>
             </div>
           </div>
           <div class="card">
             <img class="card__image" src="images/Altai.jpg" alt="Алтай" />
             <div class="card__block">
-              <p class="card__title">Алтай</p>
-              <button type="button" class="card__like-button card__like-button_active"></button>
+              <h2 class="card__title">Алтай</h2>
+              <button type="button" class="card__like-button"></button>
             </div>
           </div>
         </section>
@@ -79,12 +79,10 @@
       <div class="popup__container">
         <button type="button" class="popup__close-button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__data">
-          <fieldset class="popup__user">
-            <input type="text" class="popup__name" value="" />
-            <input type="text" class="popup__job" value="" />
-          </fieldset>
-          <input type="submit" class="popup__save-button" value="Сохранить" />
+        <form class="popup__data" name="popup__data">
+            <input type="text" class="popup__form popup__name" name="profileName" value="Жак-Ив Кусто" />
+            <input type="text" class="popup__form popup__job" name="profileJob" value="Исследователь океана" />
+          <button type="submit" class="popup__save-button">Сохранить</button>
         </form>
       </div>
     </div>

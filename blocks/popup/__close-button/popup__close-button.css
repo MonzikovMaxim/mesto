@@ -4,7 +4,7 @@
   background-image: url(../../../images/close-button.svg);
   background-repeat: no-repeat;
   background-color: transparent;
-  background-size: 100%;
+  background-size: 40px 40px;
   position: absolute;
   padding: 0;
   right: -35px;
@@ -20,11 +20,12 @@
   opacity: .6;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 485px) {
   .popup__close-button {
-    width: 40px;
-    height: 40px;
+    background-size: 30px 30px;
+    width: 26px;
+    height: 26px;
     top: -48px;
-    right: 0;
+    right: 5px;
   }
 }
