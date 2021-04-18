@@ -18,3 +18,10 @@
     text-align: center;
   }
 }
+
+@media (max-width: 425px) {
+  .profile__name {
+    max-width: 189px;
+  }
+  
+}
