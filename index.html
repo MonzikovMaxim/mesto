@@ -26,66 +26,97 @@
           </div>
           <button type="button" class="profile__add-button"></button>
         </section>
-        <section class="elements container">
-          <div class="card">
+        <section class="cards container">
+          <ul class="card__list">
+          <!-- <li class="card">
             <img class="card__image" src="images/Karachaevsk.jpg" alt="Карачаевск" />
             <div class="card__block">
               <h2 class="card__title">Карачаевск</h2>
               <button type="button" class="card__like-button"></button>
+              <button type="button" class="card__trash-button"></button>
             </div>
-          </div>
-          <div class="card">
+          </li>
+          <li class="card">
             <img class="card__image" src="images/Elbrus.jpg" alt="Эльбрус" />
             <div class="card__block">
               <h2 class="card__title">Гора Эльбрус</h2>
               <button type="button" class="card__like-button"></button>
+              <button type="button" class="card__trash-button"></button>
             </div>
-          </div>
-          <div class="card">
+          </li>
+          <li class="card">
             <img class="card__image" src="images/Dombay.jpg" alt="Домбай" />
             <div class="card__block">
               <h2 class="card__title">Домбай</h2>
               <button type="button" class="card__like-button"></button>
+              <button type="button" class="card__trash-button"></button>
             </div>
-          </div>
-          <div class="card">
+          </li>
+          <li class="card">
             <img class="card__image" src="images/kurshskya-kosa.jpg" alt="Куршская коса" />
+            <button type="button" class="card__trash-button"></button>
             <div class="card__block">
               <h2 class="card__title">Куршская коса</h2>
               <button type="button" class="card__like-button"></button>
             </div>
-          </div>
-          <div class="card">
+          </li>
+          <li class="card">
             <img class="card__image" src="images/Baikal.jpg" alt="Байкал" />
             <div class="card__block">
               <h2 class="card__title">Байкал</h2>
               <button type="button" class="card__like-button"></button>
+              <button type="button" class="card__trash-button"></button>
             </div>
-          </div>
-          <div class="card">
+          </li>
+          <li class="card">
             <img class="card__image" src="images/Altai.jpg" alt="Алтай" />
             <div class="card__block">
               <h2 class="card__title">Алтай</h2>
               <button type="button" class="card__like-button"></button>
+              <button type="button" class="card__trash-button"></button>
             </div>
-          </div>
+          </li> -->
+        </ul>
         </section>
       </main>
       <footer class="footer container">
         <p class="footer__text">© 2021 Mesto Russia</p>
       </footer>
     </div>
-    <div class="popup">
+    <div class="popup popup__edit">
       <div class="popup__container">
-        <button type="button" class="popup__close-button"></button>
-        <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__data" name="popup-data">
+        <button type="button" class="popup__close-button popup__close-button-edit"></button>
+        <form class="popup__data" name="popup-edit">
+          <h2 class="popup__title">Редактировать профиль</h2>
             <input type="text" class="popup__form popup__form_type_name" name="profile-name" value="Жак-Ив Кусто" />
             <input type="text" class="popup__form popup__form_type_job" name="profile-job" value="Исследователь океана" />
           <button type="submit" class="popup__save-button">Сохранить</button>
         </form>
       </div>
     </div>
+    <div class="popup popup__add">
+      <div class="popup__container">
+        <button type="button" class="popup__close-button popup__close-button-add"></button>
+        <form class="popup__data" name="popup-add">
+          <h2 class="popup__title">Новое место</h2>
+            <input type="text" class="popup__form popup__form_type_title" name="profile-title" placeholder="Название" />
+            <input type="text" class="popup__form popup__form_type_link" name="profile-link" placeholder="Ссылка" />
+          <button type="submit" class="popup__save-button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <template id="cards-template">
+      <li class="card">
+        <img class="card__image" src="#" alt="" />
+        <div class="card__block">
+          <h2 class="card__title"></h2>
+          <button type="button" class="card__like-button"></button>
+          <button type="button" class="card__trash-button"></button>
+        </div>
+      </li>
+    </template>
+
     <script src="scripts/script.js"></script>
   </body>
 </html>
