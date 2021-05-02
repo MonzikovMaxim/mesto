@@ -1,17 +1,17 @@
 const profileName = document.querySelector('.profile__name'); 
 const profileJob = document.querySelector('.profile__job'); 
 const editPopupButton = document.querySelector('.profile__edit-button');
-const popupEdit = document.querySelector('.popup__edit'); 
+const popupEdit = document.querySelector('.open-edit-popup'); 
 const nameInput = document.querySelector('.popup__form_type_name'); 
 const jobInput = document.querySelector('.popup__form_type_job');
 const addPopupButton = document.querySelector('.profile__add-button');
-const popupAdd = document.querySelector('.popup__add');
+const popupAdd = document.querySelector('.open-add-popup');
 const titleInput = document.querySelector('.popup__form_type_title'); 
 const linkInput = document.querySelector('.popup__form_type_link');
 
 const cardTemplate = document.querySelector('#cards-template').content;
-const cardList = document.querySelector('.card__list');
-const popupFullscreen = document.querySelector('.popup__fullscreen');
+const cardList = document.querySelector('.cards__list');
+const popupFullscreen = document.querySelector('.open-fullscreen-popup');
 const closePopup = document.querySelectorAll('.popup__close-button');
 
 const initialCards = [
