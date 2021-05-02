@@ -3,3 +3,7 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.card__like-button_active:hover {
+  opacity: 1;
+}
