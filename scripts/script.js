@@ -2,12 +2,12 @@ const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job'); 
 const editPopupButton = document.querySelector('.profile__edit-button');
 const popupEdit = document.querySelector('.popup_type_profile'); 
-const nameInput = document.querySelector('.popup__form_type_name'); 
-const jobInput = document.querySelector('.popup__form_type_job');
+const nameInput = document.querySelector('.popup__input-name'); 
+const jobInput = document.querySelector('.popup__input-job');
 const addPopupButton = document.querySelector('.profile__add-button');
 const popupAdd = document.querySelector('.popup_type_card-add');
-const titleInput = document.querySelector('.popup__form_type_title'); 
-const linkInput = document.querySelector('.popup__form_type_link');
+const titleInput = document.querySelector('.popup__input-title'); 
+const linkInput = document.querySelector('.popup__input-link');
 
 const cardTemplate = document.querySelector('#cards-template').content;
 const cardList = document.querySelector('.cards__list');
@@ -73,8 +73,8 @@ function handleProfileSubmit(event) {
 
 function handleNewImageSubmit(event) {
   event.preventDefault();
-  const newTitle = document.querySelector('.popup__form_type_title');
-  const newLink = document.querySelector('.popup__form_type_link');
+  const newTitle = document.querySelector('.popup__input-title');
+  const newLink = document.querySelector('.popup__input-link');
   const newObject = {name:newTitle.value, link:newLink.value};
   cardList.prepend(createCards(newObject));
   closePopup(popupAdd);
