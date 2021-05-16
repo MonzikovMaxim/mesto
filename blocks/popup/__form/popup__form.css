@@ -1,21 +1,4 @@
 .popup__form {
-  border: 0;
-  width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, .2);
-  font-style: normal;
-  font-weight: 400;
-  margin-bottom: 30px;
-  padding-bottom: 13px;
-  font-size: 14px;
-  line-height: 17px;
-  color: #000000;
+  border: none;
+  
 }
-
-.popup__form:focus {
-  outline-color: rgb(103, 148, 233);
-  outline-width: 3px;
- }
-
- .popup__form:last-of-type {
-  margin-bottom: 0;
- }

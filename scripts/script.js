@@ -80,20 +80,52 @@ function handleNewImageSubmit(event) {
   closePopup(popupAdd);
 }
 
+function closeOpenPopup() {
+  const openedPopup = document.querySelector('.popup_open');
+  closePopup(openedPopup);
+}
+
+ function closePopupOverlay(evt) {
+   if (evt.target === evt.currentTarget) {
+     closeOpenPopup();
+   }
+ }
+
+ function closePopupEscape(evt) {
+   if (evt.key === 'Escape') {
+    closeOpenPopup();
+   }
+ }
+
 function openPopup(popup) {
+  popup.addEventListener('click', closePopupOverlay);
+  document.addEventListener('keydown', closePopupEscape);
   popup.classList.add('popup_open');
 }
 
 function closePopup(popup) {
+  popup.removeEventListener('click', closePopupOverlay);
+  document.removeEventListener('keydown', closePopupEscape);
   popup.classList.remove('popup_open');
 }
 
 popupCloseButtons.forEach(button => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup))
-}); 
+});
 
 editPopupButton.addEventListener('click', openProfilePopup);
 addPopupButton.addEventListener('click', openAddPopup);
 popupEdit.addEventListener('submit', handleProfileSubmit);
 popupAdd.addEventListener('submit', handleNewImageSubmit);
+
+const config = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__save-button',
+  inactiveButtonClass: 'popup__save-button_disabled',
+  inputErrorClass: 'popup__form_type_error',
+  errorClass: 'popup__input-error_active'
+}
+
+enableValidation(config);
