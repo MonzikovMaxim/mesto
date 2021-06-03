@@ -3,9 +3,6 @@ import { openPopup } from './script.js';
 const popupFullscreen = document.querySelector('.popup_type_image');
 const fullScreenImage = popupFullscreen.querySelector('.fullscreen__image');
 const fullScreenCaption = popupFullscreen.querySelector('.fullscreen__caption');
-export const popupCloseButtons = document.querySelectorAll('.popup__close-button');
-
-
 export class Card {
   constructor(data, cardSelector) {
     this._name = data.name;
@@ -25,10 +22,11 @@ export class Card {
   generateCard() {
     this._element = this._getTemplate();
     this._setEventListeners();
+    this._elementImage = this._element.querySelector('.card__image');
 
     this._element.querySelector('.card__title').textContent = this._name;
-    this._element.querySelector('.card__image').src = this._link; 
-    this._element.querySelector('.card__image').alt = this._name;
+    this._elementImage.src = this._link; 
+    this._elementImage.alt = this._name;
 
     return this._element;
   }
@@ -51,7 +49,7 @@ export class Card {
   }
 
   _handleRemoveCard() {
-    this._element.querySelector('.card__trash-button').closest('.card').remove();
+    this._element.remove();
   }
 
   _handleOpenPopup() {

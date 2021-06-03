@@ -1,6 +1,6 @@
 import initialCards from './initial-cards.js'
-import { Card, popupCloseButtons } from './Card.js'
-import { FormValidator, config } from './FormValidator.js';
+import { Card } from './Card.js'
+import { FormValidator } from './FormValidator.js';
  
 const profileName = document.querySelector('.profile__name'); 
 const profileJob = document.querySelector('.profile__job'); 
@@ -10,12 +10,21 @@ const nameInput = document.querySelector('.popup__input-name');
 const jobInput = document.querySelector('.popup__input-job');
 const addPopupButton = document.querySelector('.profile__add-button');
 const popupAdd = document.querySelector('.popup_type_card-add');
-const titleInput = document.querySelector('.popup__input-title'); 
-const linkInput = document.querySelector('.popup__input-link');
+const popupCloseButtons = document.querySelectorAll('.popup__close-button');
+const addCardForm = document.querySelector('#popup-add');
 
 const cardList = document.querySelector('.cards__list');
 const newTitle = document.querySelector('.popup__input-title');
 const newLink = document.querySelector('.popup__input-link');
+
+const config = { 
+  formSelector: '.popup__form', 
+  inputSelector: '.popup__input', 
+  submitButtonSelector: '.popup__save-button', 
+  inactiveButtonClass: 'popup__save-button_disabled', 
+  inputErrorClass: 'popup__form_type_error', 
+  errorClass: 'popup__input-error_active' 
+} 
 
 const addProfileValidator = new FormValidator(config, popupAdd);
 addProfileValidator.enableValidation();
@@ -90,9 +99,8 @@ popupCloseButtons.forEach(button => {
 
 
 editPopupButton.addEventListener('click', openProfilePopup);
-addPopupButton.addEventListener('click', function() {
-  titleInput.value = ''; 
-  linkInput.value = '';
+addPopupButton.addEventListener('click', () => {
+  addCardForm.reset();
   addProfileValidator.deleteInputError();
   openPopup(popupAdd);
 });

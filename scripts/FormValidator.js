@@ -88,4 +88,4 @@ const config = {
   errorClass: 'popup__input-error_active' 
 } 
 
-export { FormValidator, config };
+export { FormValidator };
