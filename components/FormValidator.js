@@ -79,13 +79,4 @@ class FormValidator {
   }
 }  
 
-const config = { 
-  formSelector: '.popup__form', 
-  inputSelector: '.popup__input', 
-  submitButtonSelector: '.popup__save-button', 
-  inactiveButtonClass: 'popup__save-button_disabled', 
-  inputErrorClass: 'popup__form_type_error', 
-  errorClass: 'popup__input-error_active' 
-} 
-
 export { FormValidator };

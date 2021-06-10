@@ -1,8 +1,10 @@
-import { openPopup } from './script.js';
-
-const popupFullscreen = document.querySelector('.popup_type_image');
-const fullScreenImage = popupFullscreen.querySelector('.fullscreen__image');
-const fullScreenCaption = popupFullscreen.querySelector('.fullscreen__caption');
+import { openPopup } from '../pages/index.js';
+import {
+  popupFullscreen,
+  fullScreenImage,
+  fullScreenCaption
+ } from '../components/constants.js';
+ 
 export class Card {
   constructor(data, cardSelector) {
     this._name = data.name;

@@ -1,30 +1,31 @@
-import initialCards from './initial-cards.js'
-import { Card } from './Card.js'
-import { FormValidator } from './FormValidator.js';
- 
-const profileName = document.querySelector('.profile__name'); 
-const profileJob = document.querySelector('.profile__job'); 
-const editPopupButton = document.querySelector('.profile__edit-button');
-const popupEdit = document.querySelector('.popup_type_profile'); 
-const nameInput = document.querySelector('.popup__input-name'); 
-const jobInput = document.querySelector('.popup__input-job');
-const addPopupButton = document.querySelector('.profile__add-button');
-const popupAdd = document.querySelector('.popup_type_card-add');
-const popupCloseButtons = document.querySelectorAll('.popup__close-button');
-const addCardForm = document.querySelector('#popup-add');
+export { openPopup };
+import { Card } from '../components/Card.js'
+import { FormValidator } from '../components/FormValidator.js';
+import { 
+  initialCards,
+  profileName, 
+  profileJob, 
+  editPopupButton, 
+  popupEdit,
+  nameInput,
+  jobInput,
+  addPopupButton,
+  popupAdd,
+  popupCloseButtons,
+  addCardForm,
+  newTitle,
+  newLink,
+  config } from '../components/constants.js';
+import Section from '../components/Section.js';
 
-const cardList = document.querySelector('.cards__list');
-const newTitle = document.querySelector('.popup__input-title');
-const newLink = document.querySelector('.popup__input-link');
-
-const config = { 
-  formSelector: '.popup__form', 
-  inputSelector: '.popup__input', 
-  submitButtonSelector: '.popup__save-button', 
-  inactiveButtonClass: 'popup__save-button_disabled', 
-  inputErrorClass: 'popup__form_type_error', 
-  errorClass: 'popup__input-error_active' 
-} 
+const newCardList = new Section({ 
+  items: initialCards, 
+  renderer: (item) => {
+    const card = new Card(item, '#cards-template');
+    const cardElement = card.generateCard();
+    newCardList.addItem(cardElement)
+  }
+}, '.cards__list');
 
 const addProfileValidator = new FormValidator(config, popupAdd);
 addProfileValidator.enableValidation();
@@ -32,15 +33,11 @@ addProfileValidator.enableValidation();
 const editProfileValidator = new FormValidator(config, popupEdit);
 editProfileValidator.enableValidation();
 
-function createCards(item) {
-  const card = new Card(item, '#cards-template');
-  const cardElement = card.generateCard();
-  cardList.prepend(cardElement);
-};
-
+function createCards() {
 initialCards.forEach((element) => {
   createCards(element);
 });
+}
 
 function openProfilePopup() {
   nameInput.value = profileName.textContent;
@@ -106,6 +103,4 @@ addPopupButton.addEventListener('click', () => {
 });
 popupEdit.addEventListener('submit', handleProfileSubmit);
 popupAdd.addEventListener('submit', handleNewImageSubmit);
-
-
-export { openPopup }
+newCardList.renderItems();
