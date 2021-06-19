@@ -1,10 +1,4 @@
-import { openPopup } from '../pages/index.js';
-import {
-  popupFullscreen,
-  fullScreenImage,
-  fullScreenCaption
- } from '../components/constants.js';
- 
+
 export class Card {
   constructor(data, cardSelector) {
     this._name = data.name;
@@ -55,9 +49,6 @@ export class Card {
   }
 
   _handleOpenPopup() {
-    fullScreenImage.src = this._link;
-    fullScreenCaption.textContent = this._name;
-    fullScreenCaption.alt = this._name;
-    openPopup(popupFullscreen);
+    
   }
 }  

@@ -39,10 +39,15 @@ export const addCardForm = document.querySelector('#popup-add');
 export const cardList = document.querySelector('.cards__list');
 export const newTitle = document.querySelector('.popup__input-title');
 export const newLink = document.querySelector('.popup__input-link');
+export const cardListSection = '.cards__list';
+export const profilePopupSelector = '.popup_type_profile';
+export const imagePopupSelector = '.popup_type_image';
+export const popupCloseBtn = '.popup__close-button';
+export const editProfilePopup = '.popup_type_profile';
 
 export const popupFullscreen = document.querySelector('.popup_type_image');
-export const fullScreenImage = popupFullscreen.querySelector('.fullscreen__image');
-export const fullScreenCaption = popupFullscreen.querySelector('.fullscreen__caption');
+export const fullScreenImage = document.querySelector('.fullscreen__image');
+export const fullScreenCaption = document.querySelector('.fullscreen__caption');
 
 export const config = { 
   formSelector: '.popup__form', 
