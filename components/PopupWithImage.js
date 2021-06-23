@@ -5,10 +5,10 @@ export default class PopupWithImage extends Popup {
     super(popupSelector);
   }
 
-  open(image, caption) {
+  open(name, link) {
     super.open();
-    fullScreenImage.src = image;
-    fullScreenCaption.textContent = caption;
-    fullScreenCaption.alt = caption;
+    fullScreenImage.src = link;
+    fullScreenCaption.textContent = name;
+    fullScreenCaption.alt = name;
   }
 }
