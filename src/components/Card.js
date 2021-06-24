@@ -12,19 +12,15 @@ export default class Card {
     .querySelector('.card')
     .cloneNode(true);
 
-    // return cardElement;
-
   }
 
   generateCard() {
       this._element = this._getTemplate(); 
-      this._setEventListeners(); 
       this._elementImage = this._element.querySelector('.card__image'); 
-   
-      this._element.querySelector('.card__title').textContent = this._name; 
       this._elementImage.src = this._link;  
       this._elementImage.alt = this._name; 
-   
+      this._element.querySelector('.card__title').textContent = this._name; 
+      this._setEventListeners(); 
       return this._element;
   }
 

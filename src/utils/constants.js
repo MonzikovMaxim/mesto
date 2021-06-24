@@ -1,27 +1,27 @@
 export const initialCards = [
   {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    cardTitle: 'Челябинская область',
+    cardLink: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
   },
   {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    cardTitle: 'Иваново',
+    cardLink: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
   },
   {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    cardTitle: 'Камчатка',
+    cardLink: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
   },
   {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    cardTitle: 'Холмогорский район',
+    cardLink: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
   },
   {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    cardTitle: 'Байкал',
+    cardLink: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   },
   {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    cardTitle: 'Архыз',
+    cardLink: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
   },
 ];
 
@@ -44,7 +44,9 @@ export const addPopupSelector = '.popup_type_card-add';
 export const addCardForm = '#popup-add';
 export const imagePopupSelector = '.popup_type_image';
 export const profileInputName = document.querySelector('.popup__input-name'); 
-export const profileInputJob = document.querySelector('.popup__input-job'); 
+export const profileInputJob = document.querySelector('.popup__input-job');
+export const cardTitle = document.querySelector('form__input[name = cardTitle');
+export const cardLink = document.querySelector('form__input[name = cardLink');
 
 
  export const userConfig = {

@@ -15,6 +15,10 @@ import {
   editProfilePopup,
   editProfileForm,
   imagePopupSelector,
+  fullScreenImage, 
+  fullScreenCaption,
+  cardLink,
+  cardTitle,
   config } from '../utils/constants.js';
 import Section from '../components/Section.js';
 import UserInfo from '../components/UserInfo.js';
@@ -23,7 +27,7 @@ import PopupWithForm from '../components/PopupWithForm.js';
 
 
 // Popup with image
-const popupWithImage = new PopupWithImage(imagePopupSelector);
+const popupWithImage = new PopupWithImage(imagePopupSelector, fullScreenImage, fullScreenCaption);
 popupWithImage.setEventListeners();
 
 // User information
@@ -47,18 +51,11 @@ editPopupButton.addEventListener('click', () => {
 
 
 // Add Image Popup
-const popupAddImage = new PopupWithForm(addPopupSelector, addCardForm, (data) => {
-  const {cardTitle, cardLink} = data;
-  const card = new Card({name: cardTitle, link: cardLink,
-    handleCardClick: () => {
-      popupWithImage.open(cardTitle, cardLink);
-  }}, '#cards-template');
-  const cardElement = card.generateCard();
-  newCardList.addItem(cardElement)
+const popupAddImage = new PopupWithForm(addPopupSelector, addCardForm, (item) => {
+  newCardList.addItem(createCard(item))
   popupAddImage.close();
 });
 popupAddImage.setEventListeners();
-
 
 
 addPopupButton.addEventListener('click', () => {
@@ -66,15 +63,19 @@ addPopupButton.addEventListener('click', () => {
   popupAddImage.open();
 });
 
+const createCard = (item) => {
+  const card = new Card({name: item.cardTitle, link: item.cardLink,
+    handleCardClick: () => {
+      popupWithImage.open(item.cardTitle, item.cardLink);
+  }}, '#cards-template');
+  return card.generateCard();
+}
+
 // Добавление массива карточек
 const newCardList = new Section({ 
   items: initialCards, 
-  renderer: (item) => {
-    const card = new Card({name: item.name, link: item.link, handleCardClick: () => {
-      popupWithImage.open(item.name, item.link);
-    }}, '#cards-template');
-    const cardElement = card.generateCard();
-    newCardList.addItem(cardElement)
+  renderer: (element) => {
+    newCardList.addItem(createCard(element));
   }
 }, '.cards__list');
 

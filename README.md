@@ -14,5 +14,9 @@
 * JavaScript
 * Адаптивная вёрстка
 
+## Сборка
+* Webpack
+* Настроена обработка изображений и шрифтов, CSS, HTML
+
 ## Сайт 
 * https://monzikovmaxim.github.io/mesto/index.html
