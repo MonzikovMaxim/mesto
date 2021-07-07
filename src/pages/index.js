@@ -17,18 +17,24 @@ import {
   imagePopupSelector,
   fullScreenImage, 
   fullScreenCaption,
-  cardLink,
-  cardTitle,
+  apiData,
+  deletePopupButton,
+  deletePopupSelector,
+  deleteCardForm,
   config } from '../utils/constants.js';
 import Section from '../components/Section.js';
 import UserInfo from '../components/UserInfo.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
+import Api from '../components/Api.js'
 
 
 // Popup with image
 const popupWithImage = new PopupWithImage(imagePopupSelector, fullScreenImage, fullScreenCaption);
 popupWithImage.setEventListeners();
+
+const deletePopup = new PopupWithForm(deletePopupSelector, deleteCardForm)
+deletePopup.setEventListeners();
 
 // User information
 const {nameSelector, jobSelector} = userConfig;
@@ -67,7 +73,11 @@ const createCard = (item) => {
   const card = new Card({name: item.cardTitle, link: item.cardLink,
     handleCardClick: () => {
       popupWithImage.open(item.cardTitle, item.cardLink);
-  }}, '#cards-template');
+  },
+  handleDeleteCardClick: () => {
+    deletePopup.open();
+  }
+}, '#cards-template');
   return card.generateCard();
 }
 
@@ -87,3 +97,10 @@ addProfileValidator.enableValidation();
 
 const editProfileValidator = new FormValidator(config, popupEdit);
 editProfileValidator.enableValidation();
+
+// Api
+const {url, token} = apiData
+const api = new Api(url, token)
+
+// Promise.all([api.getUserInfo(), api.getInitialCards()])
+//   .then()

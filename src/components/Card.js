@@ -1,9 +1,10 @@
 export default class Card {
-  constructor({name, link, handleCardClick}, cardSelector) {
+  constructor({name, link, handleCardClick, handleDeleteCardClick}, cardSelector) {
     this._cardSelector = cardSelector;
     this._name = name;
     this._link = link;
     this._handleCardClick = handleCardClick;
+    this._handleDeleteCardClick = handleDeleteCardClick;
   }
   _getTemplate() {
     return document
@@ -40,7 +41,7 @@ export default class Card {
       this._handleLikeCard();
     })
     this._element.querySelector('.card__trash-button').addEventListener('click', () => {
-      this._handleRemoveCard();
+      this._handleDeleteCardClick();
     })
   }
 }  

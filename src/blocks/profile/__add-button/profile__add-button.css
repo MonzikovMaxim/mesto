@@ -1,7 +1,6 @@
 .profile__add-button {
   width: 150px;
   height: 50px;
-  margin: 75px 0 0 0;
   background-image: url(../../../images/add--button.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -11,16 +10,24 @@
   cursor: pointer;
   transition: opacity 0.2s ease-in-out;
   outline: none;
+  margin: 35px 0 35px 246px;  
+  /* //сделать нормальное расстояние кнопки */
 }
 
 .profile__add-button:hover {
   opacity: 0.6;
 }
 
+@media (max-width: 1280px) {
+  .profile__add-button {
+    margin: 36px 0 36px 210px;
+  }
+}
+
 @media (max-width: 950px) {
   .profile__add-button {
     width: 100%;
-    margin: 36px 0;
+    margin: 36px 0 0 0;
   }
 }
 

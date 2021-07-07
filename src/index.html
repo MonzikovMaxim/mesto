@@ -14,7 +14,9 @@
       <main>
         <section class="profile container">
           <div class="profile__box">
+            <button class="profile__avatar-edit" type="button"></button>
             <img class="profile__avatar" src="<%=require('./images/Jacques.jpg')%>" alt="Жак-Ив Кусто" />
+          </div>  
             <div class="profile__info">
               <div class="profile__name-edit">
                 <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -22,7 +24,6 @@
               </div>
               <p class="profile__job">Исследователь океана</p>
             </div>
-          </div>
           <button type="button" class="profile__add-button"></button>
         </section>
         <section class="cards container">
@@ -60,6 +61,25 @@
         </form>
       </div>
     </div>
+    <div class="popup popup_type_card-delete">
+      <div class="popup__container popup__container-small">
+        <button type="button" class="popup__close-button"></button>
+        <form class="popup__form" name="popup-delete" id="popup-delete">
+          <h2 class="popup__title-small">Вы уверены?</h2>
+          <button type="button" class="popup__save-button popup__save-button_small">Да</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_type_card-avatar">
+      <div class="popup__container popup__container-small">
+        <button type="button" class="popup__close-button"></button>
+        <form class="popup__form" name="popup-avatar" id="popup-avatar">
+          <h2 class="popup__title-small">Обновить аватар</h2>
+          <input type="url" id="url" class="popup__input popup__input-link" name="avatar" placeholder="" autocomplete="off" required>
+          <button type="button" class="popup__avatar-button">Да</button>
+        </form>
+      </div>
+    </div>   
     <div class="popup popup_type_image">
         <figure class="fullscreen">
           <button type="button" class="popup__close-button"></button>
@@ -72,9 +92,10 @@
         <img class="card__image" src="#" alt="" />
         <div class="card__block">
           <h2 class="card__title"></h2>
-          <button type="button" class="card__like-button"></button>
-          <button type="button" class="card__trash-button"></button>
         </div>
+          <button type="button" class="card__trash-button"></button>
+          <button type="button" class="card__like-button"></button>
+          <p class="card__like-counter">1</p> 
       </li>
     </template>
   </body>

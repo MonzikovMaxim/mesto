@@ -26,6 +26,7 @@ export const initialCards = [
 ];
 
 export const editPopupButton = document.querySelector('.profile__edit-button');
+export const deletePopupButton = document.querySelector('.card__trash-button');
 export const popupEdit = document.querySelector('.popup_type_profile'); 
 export const nameInput = document.querySelector('.popup__input-name'); 
 export const jobInput = document.querySelector('.popup__input-job');
@@ -41,7 +42,9 @@ export const popupCloseBtn = '.popup__close-button';
 export const editProfilePopup = '.popup_type_profile';
 export const editProfileForm = '#popup-edit';
 export const addPopupSelector = '.popup_type_card-add';
+export const deletePopupSelector = '.popup_type_card-delete'
 export const addCardForm = '#popup-add';
+export const deleteCardForm = '#popup-delete';
 export const imagePopupSelector = '.popup_type_image';
 export const profileInputName = document.querySelector('.popup__input-name'); 
 export const profileInputJob = document.querySelector('.popup__input-job');
@@ -69,3 +72,8 @@ export const config = {
   inputErrorClass: 'popup__form_type_error', 
   errorClass: 'popup__input-error_active' 
 } 
+
+export const apiData = {
+  url: 'https://mesto.nomoreparties.co/v1/cohort-25/',
+  token: 'acb985fb-faef-4b55-ae03-02af5f38d9f6'
+}
