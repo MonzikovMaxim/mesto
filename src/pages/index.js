@@ -130,7 +130,7 @@ const popupAddImage = new PopupWithForm({
       console.log(`Ошибка при загрузке новой карточки: ${err}`)
       })
     .finally(() => {
-      popupAvatar.renderLoading(false);
+      popupAddImage.renderLoading(false);
     })  
   }
 })
