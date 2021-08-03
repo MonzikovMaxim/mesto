@@ -1,56 +1,55 @@
-export default class Api {
+ export default class Api {
   constructor(url, token) {
     this._url = url;
     this._token = token;
   }
 
-  _checkPromise(res) {
+  _checkStatus= (res) => {
     if (res.ok) {
     return res.json();
   }
-  // если ошибка, отклоняем промис
   return Promise.reject(`Ошибка: ${res.status}`);
 }
 
   getInitialCards() {
-    return fetch(`${this_.url}/cards`, {
+    return fetch(`${this._url}/cards`, {
       headers: {
-        authorization: 'this._token',
+        authorization: this._token,
       },
     })
-    .then(this._checkPromise());
+    .then((res) => this._checkStatus(res));
   }
   
   getUserInfo() {
-    return fetch(`${this_.url}/users/me`, {
+    return fetch(`${this._url}/users/me`, {
       method: 'GET',
       headers: {
-        authorization: 'this._token',
+        authorization: this._token,
       },
     })
-    .then(this._checkPromise());
+    .then((res) => this._checkStatus(res));
   }
 
   setUserInfo(data) {
-    return fetch(`${this_.url}/users/me`, {
+    return fetch(`${this._url}/users/me`, {
       method: 'PATCH',
       headers: {
-        authorization: 'this._token',
+        authorization: this._token,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         name: data.name,
-        job: data.job
+        about: data.job,
     })
   })
-    .then(this._checkPromise());
+  .then((res) => this._checkStatus(res));
   }
 
   addNewCard(cardTitle, cardLink) {
-    return fetch(`${this_.url}/cards`, {
+    return fetch(`${this._url}/cards`, {
       method: 'POST',
       headers: {
-        authorization: 'this._token',
+        authorization: this._token,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -58,53 +57,54 @@ export default class Api {
         link: cardLink
       })
     })
-    .then(this._checkPromise());
+    .then((res) => this._checkStatus(res));
   }
 
-  deleteCard() {
-    return fetch(`${this_.url}/cards/${_id}`, {
+  deleteCard(_id) {
+    return fetch(`${this._url}/cards/${_id}`, {
       method: 'DELETE',
       headers: {
-        authorization: 'this._token',
-        'Content-Type': 'application/json'
-    },
+        authorization: this._token,   
+      'Content-Type': 'application/json',
+      },
   })  
-    .then(this._checkPromise());
+  .then((res) => this._checkStatus(res));
  }
 
-  setLike() {
-    return fetch(`${this_.url}/cards/likes/${_id}`, {
-      method: 'PUT',
-      headers: {
-        authorization: 'this._token',
-        'Content-Type': 'application/json'
+ setLike(cardId) {
+  return fetch(`${this._url}/cards/likes/${cardId}`, {
+    method: 'PUT',
+    headers: {
+      authorization: this._token,
+      'Content-Type': 'application/json'
     },
-  })  
-    .then(this._checkPromise());
-  }
+  })
+  .then((res) => this._checkStatus(res));
+}
 
-  deleteLike() {
-    return fetch(`${this_.url}/cards/likes/${_id}`, {
-      method: 'DELETE',
-      headers: {
-        authorization: 'this._token',
-        'Content-Type': 'application/json'
+deleteLike(cardId) {
+  return fetch(`${this._url}/cards/likes/${cardId}`, {
+    method: 'DELETE',
+    headers: {
+      authorization: this._token,
+      'Content-Type': 'application/json'
     },
-  })  
-    .then(this._checkPromise());
-  }
+  })
+  .then((res) => this._checkStatus(res));
+}
 
-  changeAvatar(data) {
-    return fetch(`${this_.url}/users/me/avatar`, {
+  changeAvatar(avatarLink) {
+    return fetch(`${this._url}/users/me/avatar`, {
       method: 'PATCH',
       headers: {
-        authorization: 'this._token',
+        authorization: this._token,
         'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      avatar: data.avatar
+      },
+      body: JSON.stringify({
+      avatar: avatarLink
     })
   })  
-    .then(this._checkPromise());
+  .then((res) => this._checkStatus(res));
   }
 }
+

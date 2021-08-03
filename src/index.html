@@ -15,7 +15,7 @@
         <section class="profile container">
           <div class="profile__box">
             <button class="profile__avatar-edit" type="button"></button>
-            <img class="profile__avatar" src="<%=require('./images/Jacques.jpg')%>" alt="Жак-Ив Кусто" />
+            <img class="profile__avatar" src="#" alt="аватар" />
           </div>  
             <div class="profile__info">
               <div class="profile__name-edit">
@@ -40,9 +40,9 @@
         <button type="button" class="popup__close-button"></button>
         <form class="popup__form" name="popup-edit" id="popup-edit" novalidate>
           <h2 class="popup__title">Редактировать профиль</h2>
-            <input type="text" id="name" minlength="2" maxlength="40" class="popup__input popup__input-name" name="name" placeholder="Имя" value="Жак-Ив Кусто" autocomplete="off" required>
+            <input type="text" id="name" minlength="2" maxlength="40" class="popup__input popup__input-name" name="name" placeholder="Имя"  autocomplete="off" required>
             <span class="popup__input-error" id="name-error"></span>
-            <input type="text" id="job" maxlength="200" minlength="2" class="popup__input popup__input-job" name="job" placeholder="О себе" value="Исследователь океана" autocomplete="off" required>
+            <input type="text" id="job" maxlength="200" minlength="2" class="popup__input popup__input-job" name="job" placeholder="О себе"  autocomplete="off" required>
             <span class="popup__input-error" id="job-error"></span>
           <button type="submit" class="popup__save-button">Сохранить</button>
         </form>
@@ -61,12 +61,12 @@
         </form>
       </div>
     </div>
-    <div class="popup popup_type_card-delete">
+    <div class="popup popup_type_card-delete" id="popup-delete">
       <div class="popup__container popup__container-small">
         <button type="button" class="popup__close-button"></button>
-        <form class="popup__form" name="popup-delete" id="popup-delete">
+        <form class="popup__form" name="popup-delete">
           <h2 class="popup__title-small">Вы уверены?</h2>
-          <button type="button" class="popup__save-button popup__save-button_small">Да</button>
+          <button type="submit" class="popup__save-button popup__save-button_small">Да</button>
         </form>
       </div>
     </div>
@@ -75,8 +75,9 @@
         <button type="button" class="popup__close-button"></button>
         <form class="popup__form" name="popup-avatar" id="popup-avatar">
           <h2 class="popup__title-small">Обновить аватар</h2>
-          <input type="url" id="url" class="popup__input popup__input-link" name="avatar" placeholder="" autocomplete="off" required>
-          <button type="button" class="popup__avatar-button">Да</button>
+          <input type="url" id="avatar" class="popup__input popup__avatar-link" name="avatarLink" placeholder="Ссылка" autocomplete="off" required>
+          <span class="popup__input-error" id="avatar-error"></span>
+          <button type="submit" class="popup__save-button">Да</button>
         </form>
       </div>
     </div>   
@@ -95,7 +96,7 @@
         </div>
           <button type="button" class="card__trash-button"></button>
           <button type="button" class="card__like-button"></button>
-          <p class="card__like-counter">1</p> 
+          <div class="card__like-counter">0</div> 
       </li>
     </template>
   </body>
