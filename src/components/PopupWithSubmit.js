@@ -2,7 +2,7 @@ import Popup from './Popup.js';
 export default class PopupWithSubmit extends Popup {
   constructor(popupSelector) {
     super(popupSelector)
-    this._form = document.querySelector('#popup-delete');
+    this._form = this._popup.querySelector('.popup__form');
     this._handleSubmit = null;
   }
   setFormSubmit(handler) {

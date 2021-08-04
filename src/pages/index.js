@@ -76,7 +76,6 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
 //Edit Popup
 const popupEditProfile = new PopupWithForm({
   popupSelector: editProfilePopup, 
-  formSelector: editProfileForm,
   handleFormSubmit: (formValues) => {
   popupEditProfile.renderLoading(true);
   api.setUserInfo(formValues)
@@ -97,7 +96,6 @@ popupEditProfile.setEventListeners();
 
 const popupAvatar = new PopupWithForm({
   popupSelector: avatarPopupSelector, 
-  formSelector: avatarForm, 
   handleFormSubmit: (data) => {
   popupAvatar.renderLoading(true);
   api.changeAvatar(data.avatarLink)
@@ -117,14 +115,12 @@ popupAvatar.setEventListeners();
 
 const popupAddImage = new PopupWithForm({
   popupSelector: addPopupSelector,
-  formSelector: addCardForm,
   handleFormSubmit: (data) => {
     popupAddImage.renderLoading(true)
     api.addNewCard(data.cardTitle, data.cardLink)
     .then(item => {
       newCardList.addItem(createCard(item), false)
       popupAddImage.close()
-      popupAddImage.renderLoading(false)
     })
     .catch((err) => {
       console.log(`Ошибка при загрузке новой карточки: ${err}`)
@@ -148,6 +144,9 @@ function createCard(dataCard) {
     .then(() => {
       card.handleRemoveCard()
       deleteCardPopup.close()
+    })
+    .catch((err) =>{
+      console.log(`Ошибка при удалении карточки: ${err}`)
     })
   })
 },

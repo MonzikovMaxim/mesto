@@ -8,7 +8,7 @@ export default class UserInfo {
   setInfo(data) {
     this._name.textContent = data.name;
     this._about.textContent = data.about;
-    this._avatar.src = data.avatar;
+    this.setAvatar(data);
   }
 
   getInfo() {
